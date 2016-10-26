@@ -1,0 +1,28 @@
+{
+  "name": "zcyjiggly",
+  "description": "node web container",
+  "author": {
+    "name": "yunuo"
+  },
+  "version": "0.0.14",
+  "dependencies": {
+    "chokidar": "~1.6.1",
+    "commander": "~2.9.0",
+    "express": "~4.14.0",
+    "glob": "~7.1.1",
+    "handlebars": "~4.0.4",
+    "lodash": "~4.16.4",
+    "moment": "~2.15.0",
+    "serve-static": "~1.11.1"
+  },
+  "devDependencies": {},
+  "bin": {
+    "jiggly": "./bin/jiggly"
+  },
+  "scripts": {
+    "build": "npm i -g .",
+    "debug": "node --debug-brk ./index.js",
+    "test": "cd test && env NODE_ENV=test mocha **/*.js --require should -R spec",
+    "start": "node ./index.js"
+  }
+}
