@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.14",
+  "version": "0.0.16",
   "dependencies": {
     "chokidar": "~1.6.1",
     "commander": "~2.9.0",
