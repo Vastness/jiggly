@@ -14,6 +14,9 @@ require('./lib/routes')(app);
 // add file watcher and reload
 require('./lib/file_watcher');
 
+// add file auto reload to browser
+require('./lib/browserSync');
+
 app.listen(config.serverPort);
 
 console.log("server listening at port: " + config.serverPort);
