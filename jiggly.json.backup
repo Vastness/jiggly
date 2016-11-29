@@ -2,5 +2,19 @@
   "filesHome": "/Users/anson/Develop/isale/isale-front-example/public",
   "dataFile": "/Users/anson/Develop/isale/isale-front-example/test/data.js",
   "serverPort": 3000,
-  "pageMode": true
+  "pageMode": true,
+  "proxy": {
+    "middle": {
+      "domain": "http://",
+      "apis": ["1"]
+    },
+    "expert": {
+      "domain": "http://"
+    }
+  },
+  "proxyAuth": {
+    "name": "",
+    "password": "",
+    "url": ""
+  }
 }
