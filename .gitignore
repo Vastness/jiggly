@@ -1,1 +1,6 @@
+#editer
+.vscode
+
+test/
+
 node_modules/

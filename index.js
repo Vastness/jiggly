@@ -1,22 +1,32 @@
 
-var express = require("express");
+var express = require('express');
 
-var config = require("./lib/config");
+var debug = require('debug')('zcyjiggly:index');
+var config = require('./lib/config');
+var dataProvider = require('./lib/data_provider');
 
 app = express();
 
-// require express server config
-require('./lib/express')(app);
+dataProvider.init()
+  .then(function() {
+    // require express server config
+    require('./lib/express')(app);
 
-// require express routers config
-require('./lib/routes')(app);
+    // require express routers config
+    require('./lib/routes')(app);
 
-// add file watcher and reload
-require('./lib/file_watcher');
+    // add file watcher and reload
+    require('./lib/file_watcher');
 
-// add file auto reload to browser
-// require('./lib/tasks')();
+    // add file auto reload to browser
+    // require('./lib/tasks')();
 
-app.listen(config.serverPort);
+    app.listen(config.serverPort);
 
-console.log("server listening at port: " + config.serverPort);
+    debug('server listening at port: ' + config.serverPort);
+  })
+  .catch(function(err) {
+    debug('server error ', err);
+  })
+
+

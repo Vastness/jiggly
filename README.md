@@ -198,3 +198,8 @@ The data file may like below:
 ```
 
 Export your datas with url:object/function pair. And if functions provided, all the request params in form and query will be passed in.
+
+
+####DEBUG
+
+DEBUG=zcyjiggly:*
