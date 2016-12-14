@@ -15,7 +15,7 @@ require('./lib/routes')(app);
 require('./lib/file_watcher');
 
 // add file auto reload to browser
-require('./lib/browserSync');
+// require('./lib/tasks')();
 
 app.listen(config.serverPort);
 

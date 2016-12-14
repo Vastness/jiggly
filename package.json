@@ -4,18 +4,26 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.16",
+  "version": "0.0.17",
   "dependencies": {
     "bluebird": "~3.4.6",
     "browser-sync": "~2.18.2",
     "chokidar": "~1.6.1",
     "commander": "~2.9.0",
+    "eslint": "^3.11.1",
     "express": "~4.14.0",
     "glob": "~7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-load-plugins": "^1.4.0",
     "handlebars": "~4.0.4",
     "http-proxy": "^1.15.2",
+    "js-to-java": "^2.4.0",
+    "js-yaml": "^3.7.0",
     "lodash": "~4.16.4",
     "moment": "~2.15.0",
+    "node-zookeeper-dubbo": "^2.1.5",
+    "promised-handlebars": "^2.0.1",
     "request": "~2.79.0",
     "serve-static": "~1.11.1"
   },

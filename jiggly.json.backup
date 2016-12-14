@@ -1,6 +1,9 @@
 {
-  "filesHome": "/Users/anson/Develop/isale/isale-front-example/public",
-  "dataFile": "/Users/anson/Develop/isale/isale-front-example/test/data.js",
+  "tasks": {
+    "eslint": "/Users/anson/Develop/i/front-example/app"
+  },
+  "filesHome": "/Users/anson/Develop/front-example/public",
+  "dataFile": "/Users/anson/Develop/front-example/test/data.js",
   "serverPort": 3000,
   "pageMode": true,
   "proxy": {
