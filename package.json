@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.17",
+  "version": "0.0.18",
   "dependencies": {
     "bluebird": "~3.4.6",
     "browser-sync": "~2.18.2",
@@ -14,9 +14,6 @@
     "eslint": "^3.11.1",
     "express": "~4.14.0",
     "glob": "~7.1.1",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^3.0.1",
-    "gulp-load-plugins": "^1.4.0",
     "handlebars": "~4.0.4",
     "http-proxy": "^1.15.2",
     "js-to-java": "^2.4.0",
