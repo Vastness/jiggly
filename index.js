@@ -19,7 +19,7 @@ dataProvider.init()
     require('./lib/file_watcher');
 
     // add file auto reload to browser
-    // require('./lib/tasks')();
+    require('./lib/tasks')();
 
     app.listen(config.serverPort);
 

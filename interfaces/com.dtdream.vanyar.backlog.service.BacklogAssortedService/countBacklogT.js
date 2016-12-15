@@ -17,8 +17,8 @@ module.exports = function(appT, appTagT, beginTimeT, endTimeT) {
       args: [
         java.String(appT || null),
         java.String(appTagT || null),
-        java.long(beginTimeT || null),
-        java.long(endTimeT || null),
+        java.Long(beginTimeT || null),
+        java.Long(endTimeT || null),
       ]
     }
   }

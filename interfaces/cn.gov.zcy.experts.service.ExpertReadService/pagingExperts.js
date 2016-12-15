@@ -26,12 +26,12 @@ module.exports = function(params) {
         java.String(params.company || null),
         java.String(params.mobile || null),
         java.String(params.districtId || null),
-        java.int(params.status || null),
-        java.int(params.expertType || null),
+        java.Integer(params.status || null),
+        java.Integer(params.expertType || null),
         java.String(params.bids || null),
         java.String(params.ages || null),
-        java.int(params.pageNo || null),
-        java.int(params.pageSize || null),
+        java.Integer(params.pageNo || null),
+        java.Integer(params.pageSize || null),
         java.String(params.filter || null),
       ]
     }
