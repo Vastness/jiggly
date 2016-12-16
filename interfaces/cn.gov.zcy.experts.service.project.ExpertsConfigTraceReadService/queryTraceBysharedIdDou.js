@@ -2,13 +2,16 @@
  * Long shareId,Integer type
  */
 
-module.exports = function(shareId, type) {
+module.exports = function(params) {
+  if (!params) {
+    params = {}
+  }
   return function(java) {
     return {
       user: false,
       args: [
-        java.Long(shareId || null),
-        java.Integer(type || null)
+        java.Long(params.shareId || null),
+        java.Integer(params.type || null)
       ]
     }
   }

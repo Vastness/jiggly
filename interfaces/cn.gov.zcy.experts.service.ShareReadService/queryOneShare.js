@@ -1,6 +1,6 @@
 /**
- * user
- * Long expertId
+ * BaseUser user,
+ * Long id,
  */
 
 module.exports = function(params) {
@@ -9,9 +9,9 @@ module.exports = function(params) {
   }
   return function(java) {
     return {
-      user: {index: 1},
+      user: true,
       args: [
-        java.Long(params.expertId || null)
+        java.Long(params.id || null),
       ]
     }
   }

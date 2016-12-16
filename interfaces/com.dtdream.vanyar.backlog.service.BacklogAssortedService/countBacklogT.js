@@ -10,15 +10,18 @@
  *  @Export(paramNames = {"user", "appT", "appTagT", "beginTimeT", "endTimeT"})
     Response<Long> countBacklogT(LoginUser user, String appT, String appTagT, Long beginTimeT, Long endTimeT);
  */
-module.exports = function(appT, appTagT, beginTimeT, endTimeT) {
+module.exports = function(params) {
+  if (!params) {
+    params = {}
+  }
   return function(java) {
     return {
       user: true,
       args: [
-        java.String(appT || null),
-        java.String(appTagT || null),
-        java.Long(beginTimeT || null),
-        java.Long(endTimeT || null),
+        java.String(params.appT || null),
+        java.String(params.appTagT || null),
+        java.Long(params.beginTimeT || null),
+        java.Long(params.endTimeT || null),
       ]
     }
   }

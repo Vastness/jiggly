@@ -3,12 +3,15 @@
  * pageId
  */
 
-module.exports = function(pageId) {
+module.exports = function(params) {
+  if (!params) {
+    params = {}
+  }
   return function(java) {
     return {
       user: true,
       args: [
-        java.String(pageId || 'default')
+        java.String(params.pageId || 'default')
       ]
     }
   }
