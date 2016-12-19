@@ -1,23 +1,42 @@
 {
-  "tasks": {
-    "eslint": "/Users/anson/Develop/i/front-example/app"
-  },
-  "filesHome": "/Users/anson/Develop/front-example/public",
-  "dataFile": "/Users/anson/Develop/front-example/test/data.js",
+  "public": "public",
   "serverPort": 3000,
-  "pageMode": true,
+  "dataFiles": [
+    "test/common.js",
+    "test/data.js",
+    "test/expert.js",
+    "test/share.js"
+  ],
   "proxy": {
+    "domain": "http://dev.internal",
+    "uaa": {
+      "port": 18081,
+      "apis": []
+    },
     "middle": {
-      "domain": "http://",
-      "apis": ["1"]
+      "port": 8088,
+      "apis": [
+        "/api/zoss/getSTSToken",
+        "/api/zoss/getDownLoadUrl",
+        "/api/district/getDistrictTree",
+        "\\/api\\/address\\/\\d+\\/children"
+      ]
     },
     "expert": {
-      "domain": "http://"
+      "port": 8010,
+      "apis": [
+        "\\/zcy\\/experts\\/*",
+        "\\zcy\\/opinions\\/*",
+        "\\zcy\\/share\\/*"
+      ]
     }
   },
-  "proxyOauth": {
-    "name": "",
-    "password": "",
-    "url": ""
-  }
+  "proxyAuth": {
+    "name": "test7@test.com",
+    "password": "test123456"
+  },
+  "interfaces": "test/interfaces",
+  "tasks": {
+    "eslint": "app"
+  },
 }
