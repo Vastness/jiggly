@@ -4,3 +4,6 @@
 test/
 
 node_modules/
+
+#temp
+interfaces.js
