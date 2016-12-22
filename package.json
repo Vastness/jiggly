@@ -4,7 +4,7 @@
   "author": {
     "name": "yunuo"
   },
-  "version": "0.0.21",
+  "version": "0.0.22",
   "dependencies": {
     "bluebird": "~3.4.6",
     "browser-sync": "~2.18.2",
