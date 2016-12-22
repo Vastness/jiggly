@@ -35,10 +35,89 @@ All options has default value below:
       "extraHelpers": [],
       "oldMode": false,
       "pageMode": false,
-      "assetsPrefix": "/lunatone"
+      "assetsPrefix": "/lunatone",
+      "dubbo": {
+        "base": "https://120.27.160.167/ZCY/zcy-web-lib/raw/master/jiggly-dubbos/index.js",
+        "extra": "test/dubbo.js"
+      },
+      "proxy": {
+        "domain": "http://dev.internal",
+        "uaa": {
+          "port": 18081,
+          "apis": []
+        },
+        "middle": {
+          "port": 8088,
+          "apis": [
+            "/api/zoss/getSTSToken",
+            "/api/zoss/getDownLoadUrl",
+            "/api/district/getDistrictTree",
+            "\\/api\\/address\\/\\d+\\/children"
+          ]
+        },
+        "expert": {
+          "port": 8010,
+          "apis": [
+            "\\/zcy\\/experts\\/*",
+            "\\zcy\\/opinions\\/*",
+            "\\zcy\\/share\\/*"
+          ]
+        }
+      },
+      "proxyAuth": {
+        "name": "test7@test.com",
+        "password": "test123456"
+      }
     }
 
 The config file (`jiggly.json`) can include multiple option groups. Depend on env variable `NODE_ENV`, one group will be loaded.
+
+- dubbo： 如果需要调用服务器dubbo渲染页面数据。由于java函数参数必须匹配，所以需要针对部分函数进行参数处理。
+
+  `base`为默认的接口参数转换。
+
+  `extra`为本地填写，如果base配置项没有的接口，需要在本地添加。希望定期能同步到base，这样不用到处写。
+
+  如果dubbo接口只要LoginUser对象，则不需要添加，其他的均需要。
+
+  如果日志中出现`pls check ....`时请配置。
+
+  ```js
+  // 接口配置如下
+  module.exports = {
+    // 要求service的全路径
+    "com.dtdream.vanyar.privilege.service.ResourcePrivilegeReadService": {
+      /**
+      * 获取目标用户的待办事项数量
+      */
+      getEnvHref: function() {
+        // 其中java对象为require('js-to-java')，可查看文档https://github.com/node-modules/js-to-java
+        return function(java) {
+          return {
+            user: false
+          }
+        }
+      },
+      queryExpertInfo4Modify: function(params) {
+        if (!params) {
+          params = {}
+        }
+        return function(java) {
+          return {
+            user: {index: 1},
+            args: [
+              java.Long(params.expertId || null)
+            ]
+          }
+        }
+      }
+    }
+  }
+  ```
+
+- proxyAuth：登陆的用户名和密码
+
+- proxy：http请求的配置，可以直接本地代理到服务器，支持正则通配
 
 ex:
 
@@ -196,9 +275,6 @@ The data file may like below:
       }
     }
 ```
-
-Export your datas with url:object/function pair. And if functions provided, all the request params in form and query will be passed in.
-
 
 ####DEBUG
 

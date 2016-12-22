@@ -9,7 +9,7 @@
   ],
   "dubbo": {
     "base": "https://120.27.160.167/ZCY/zcy-web-lib/raw/master/jiggly-dubbos/index.js",
-    "extra": "dubbo.js"
+    "extra": "test/dubbo.js"
   },
   "proxy": {
     "domain": "http://dev.internal",
@@ -38,9 +38,5 @@
   "proxyAuth": {
     "name": "test7@test.com",
     "password": "test123456"
-  },
-  "interfaces": "test/interfaces",
-  "tasks": {
-    "eslint": "app"
-  },
+  }
 }
